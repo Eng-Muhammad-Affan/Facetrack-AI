@@ -1,6 +1,5 @@
 import os
 import uuid
-import magic  # For MIME type detection
 from pathlib import Path
 from typing import Optional
 from dotenv import load_dotenv

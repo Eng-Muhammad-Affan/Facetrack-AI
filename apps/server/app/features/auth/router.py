@@ -2,15 +2,15 @@
 from fastapi import APIRouter, Depends, HTTPException, Form , UploadFile, File
 from sqlalchemy.orm import Session
 from app.core.database import SessionLocal
-from app.auth.models import User
-from app.auth.models import FaceEmbedding
-from app.logs.models import AttendanceLog
+from app.features.auth import User
+from app.features.auth import FaceEmbedding
+from app.features.attendance_log import AttendanceLog
 from datetime import datetime
 from dateutil import parser 
 
 import numpy as np
-from app.auth.generate_random import generate_registration_number 
-from app.auth.services import AuthService
+from app.features.auth import generate_registration_number 
+from app.features.auth.services import AuthService
 
 # from app.auth.utils import (
 #     verify_password,
@@ -37,9 +37,6 @@ def get_db():
         yield db
     finally:
         db.close()
-
-face_service = FaceService()
-blob_upload = SupabaseBlobUpload()
 
 # ============ PUBLIC ROUTES (No auth required) ============
 

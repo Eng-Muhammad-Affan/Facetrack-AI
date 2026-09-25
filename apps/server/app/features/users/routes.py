@@ -13,7 +13,7 @@ from app.core.database import SessionLocal
 from app.core.logger import logger
 
 #  ______ Modules ...
-from app.auth.models import User
+from app.features.auth import User
 
 #  ______ Pydantic Schemas ...
 class UserUpdateSchema(BaseModel):

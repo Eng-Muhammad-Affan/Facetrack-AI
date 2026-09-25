@@ -1,7 +1,7 @@
 ## ____ Routes ...
-from app.auth import routes as auth_routes
-from app.logs import routes as log_routes
-from app.users import routes as users_routes
+from app.features.auth import routes as auth_routes
+from app.features.attendance_log import routes as log_routes
+from app.features.users import routes as users_routes
 
 from fastapi import FastAPI
 
@@ -20,7 +20,6 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.core.vector import enable_pgvector_extension
 
 app = FastAPI()
-
 
 from dotenv import load_dotenv
 import os 
